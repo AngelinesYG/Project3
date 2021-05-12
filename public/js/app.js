@@ -79,9 +79,11 @@ deletePlace = (event) => {
   render = () => {
     return (
 
+
     <div>
         <form className="form-group col-sm-6" onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name</label>
+
           <input
             className="form-control"
             type="text"
@@ -184,6 +186,7 @@ deletePlace = (event) => {
 
                       <input className="btn btn-primary mb-1" type="submit" id="Submit Edits" />
                     </form>
+
                   </details>
                   <button value={place._id} onClick={this.deletePlace} className="btn btn-danger">Delete</button>
 
