@@ -1,6 +1,6 @@
 class App extends React.Component {
   state = {
-    places: [],
+    place: [],
     name: "",
     image: "",
     city: "",
@@ -20,10 +20,10 @@ class App extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    axios.post('/places', this.state).then(
+    axios.post('/place', this.state).then(
       (response) => {
         this.setState({
-          places: response.data,
+          place: response.data,
           name: "",
           image: "",
           city: "",
@@ -36,14 +36,14 @@ class App extends React.Component {
 
 /* ------------- UPDATE PLANT -------------  */
 
-updatePlaces = (event) => {
+updatePlace = (event) => {
   event.preventDefault()
   const id = event.target.id
   console.log(event.target.id);
-  axios.put('/places/' + id, this.state).then(
+  axios.put('/place/' + id, this.state).then(
     (response) => {
       this.setState({
-        places: response.data,
+        place: response.data,
         name: "",
         image: "",
         city: "",
@@ -56,11 +56,11 @@ updatePlaces = (event) => {
 
 /* ------------- DELETE PLANT -------------  */
 
-deletePlaces = (event) => {
-  axios.delete('/places/' + event.target.value).then(
+deletePlace = (event) => {
+  axios.delete('/place/' + event.target.value).then(
     (response) => {
       this.setState({
-        places: response.data
+        place: response.data
       })
     }
   )
@@ -68,9 +68,9 @@ deletePlaces = (event) => {
 
 /* ----- MOUNT DATA ON LOAD FUNCTION: ------  */
   componentDidMount = () => {
-    axios.get('/places').then(response => {
+    axios.get('/place').then(response => {
       this.setState({
-        places: response.data
+        place: response.data
       })
     })
   }
@@ -79,9 +79,9 @@ deletePlaces = (event) => {
   render = () => {
     return <div>
 
-      <section className="add-places">
+      <section className="add-place">
         <form onSubmit={this.handleSubmit} className="add-place">
-        <h3>Add Places</h3>
+        <h3>Add Place</h3>
           <label htmlFor="name">Name</label><br/>
           <input
             type="text"
@@ -126,22 +126,22 @@ deletePlaces = (event) => {
         </form>
       </section>
 
-      <section className="places-list">
+      <section className="place-list">
         <ul>
-          {this.state.places.map(plant => {
+          {this.state.place.map(place => {
             return (
-              <li key={places._id}>
-                <h2>{places.name}</h2>
-                <img src={places.image} alt={places.name} />
+              <li key={place._id}>
+                <h2>{place.name}</h2>
+                <img src={place.image} alt={place.name} />
                 <div className="dropdowns">
                   <details>
                     <summary>Description</summary>
-                      <p>City: {places.city}</p>
-                      <p>{places.description}</p>
+                      <p>City: {place.city}</p>
+                      <p>{place.description}</p>
                   </details>
                   <details>
                     <summary>Edit / Delete</summary>
-                    <form id={places._id} onSubmit={this.updatePlaces}>
+                    <form id={place._id} onSubmit={this.updateplace}>
                       <label htmlFor="name">Name</label><br/>
                       <input
                         type="text"
@@ -179,7 +179,7 @@ deletePlaces = (event) => {
                       <input type="submit" id="Submit Edits" />
 
                     </form>
-                    <button value={places._id} onClick={this.deletePlaces}>Delete</button>
+                    <button value={place._id} onClick={this.deleteplace}>Delete</button>
                   </details>
                 </div>
               </li>
