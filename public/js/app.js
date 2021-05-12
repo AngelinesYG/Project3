@@ -132,10 +132,10 @@ deletePlace = (event) => {
         </form>
 
         <ul>
-          {this.state.place.map(place => {
+         {this.state.place.map(place => {
             return (
               <li key={place._id}>
-                <h2>{place.name}</h2>
+              <h2>{place.name}</h2>
                 <img src={place.image} alt={place.name} />
                 <div className="dropdowns">
                   <details>
@@ -148,7 +148,7 @@ deletePlace = (event) => {
 
                   <details>
                     <summary>Edit</summary>
-                    <form id={place._id} onSubmit={this.state.updatePlace}>
+                    <form id={place._id} onSubmit={this.updatePlace}>
 
                       <label htmlFor="name">Name</label><br/>
                       <input
