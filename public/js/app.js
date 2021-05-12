@@ -128,10 +128,10 @@ deletePlace = (event) => {
 
       <section className="place-list">
         <ul>
-          {this.state.place.map(place => {
+         {this.state.place.map(place => {
             return (
               <li key={place._id}>
-                <h2>{place.name}</h2>
+              <h2>{place.name}</h2>
                 <img src={place.image} alt={place.name} />
                 <div className="dropdowns">
                   <details>
