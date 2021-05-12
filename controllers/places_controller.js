@@ -17,11 +17,11 @@ places.post('/', (req, res) => {
   })
 })
 
-places.get('/seed', (req, res) => {
-  Place.insertMany(placeSeed, (err, manyPlaces) => {
-    res.redirect('/places')
-  })
-})
+// places.get('/seed', (req, res) => {
+//   Place.insertMany(placeSeed, (err, manyPlaces) => {
+//     res.redirect('/places')
+//   })
+// })
 
 places.put('/:id', (req, res) => {
   Place.findByIdAndUpdate(

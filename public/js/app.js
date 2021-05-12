@@ -1,6 +1,6 @@
 class App extends React.Component {
   state = {
-    places: [],
+    place: [],
     name: "",
     image: "",
     city: "",
@@ -23,7 +23,7 @@ class App extends React.Component {
     axios.post('/places', this.state).then(
       (response) => {
         this.setState({
-          places: response.data,
+          place: response.data,
           name: "",
           image: "",
           city: "",
@@ -43,7 +43,7 @@ updatePlaces = (event) => {
   axios.put('/places/' + id, this.state).then(
     (response) => {
       this.setState({
-        places: response.data,
+        place: response.data,
         name: "",
         image: "",
         city: "",
@@ -60,7 +60,7 @@ deletePlaces = (event) => {
   axios.delete('/places/' + event.target.value).then(
     (response) => {
       this.setState({
-        places: response.data
+        place: response.data
       })
     }
   )
@@ -70,14 +70,15 @@ deletePlaces = (event) => {
   componentDidMount = () => {
     axios.get('/places').then(response => {
       this.setState({
-        places: response.data
+        place: response.data
       })
     })
   }
 /*  ------ END COMPONENT DID MOUNT -----  */
 
   render = () => {
-    return <div>
+    return (
+      <div>
 
       <section className="add-places">
         <form onSubmit={this.handleSubmit} className="add-place">
@@ -128,7 +129,7 @@ deletePlaces = (event) => {
 
       <section className="places-list">
         <ul>
-          {this.state.places.map(plant => {
+          {this.state.place.map(plant => {
             return (
               <li key={places._id}>
                 <h2>{places.name}</h2>
@@ -188,6 +189,7 @@ deletePlaces = (event) => {
         </ul>
       </section>
     </div>
+    )
   }
 }
 
