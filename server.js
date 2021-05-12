@@ -17,7 +17,7 @@ const MONGODB_URI = process.env.MONGODB_URI
 const placesController = require('./controllers/places_controller.js')
 app.use(express.static('public'))
 app.use(express.json())
-app.use('/places', placesController)
+app.use('/place', placesController)
 
 // app.get('/', (req, res) =>{
 //    res.send('hello wold')
