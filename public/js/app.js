@@ -77,49 +77,57 @@ deletePlace = (event) => {
 /*  ------ END COMPONENT DID MOUNT -----  */
 
   render = () => {
-    return <div>
+    return (
+
+
+    <div>
 
       <section className="add-place">
         <form onSubmit={this.handleSubmit} className="add-place">
-        <h3>Add Place</h3>
-          <label htmlFor="name">Name</label><br/>
+          <label htmlFor="name">Name</label>
+
           <input
+            className="form-control"
             type="text"
             id="name"
             onChange={this.handleChange}
-            value={this.state.name}
-          /><br/>
+            value={this.state.place.name}
+          />
 
-          <label htmlFor="image">Image</label><br/>
+          <label htmlFor="image">Image</label>
           <input
+            className="form-control"
             type="text"
             id="image"
             onChange={this.handleChange}
-            value={this.state.image}
-          /><br/>
+            value={this.state.place.image}
+          />
 
-          <label htmlFor="city">City</label><br/>
+          <label htmlFor="city">City</label>
           <input
+            className="form-control"
             type="text"
             id="city"
             onChange={this.handleChange}
-            value={this.state.city}
-          /><br/>
+            value={this.state.place.city}
+          />
 
-          <label htmlFor="country">Country</label><br/>
+          <label htmlFor="country">Country</label>
           <input
+            className="form-control"
             type="text"
             id="country"
             onChange={this.handleChange}
-            value={this.state.country}
-          /><br/>
-          <label htmlFor="description">Description</label><br/>
+            value={this.state.place.country}
+          />
+          <label htmlFor="description">Description</label>
           <input
+            className="form-control"
             type="text"
             id="description"
             onChange={this.handleChange}
-            value={this.state.description}
-          /><br/>
+            value={this.state.place.description}
+          />
 
           <input type="submit" id="Add Place" />
 
@@ -139,9 +147,12 @@ deletePlace = (event) => {
                       <p>City: {place.city}</p>
                       <p>{place.description}</p>
                   </details>
+
+
                   <details>
                     <summary>Edit / Delete</summary>
-                    <form id={place._id} onSubmit={this.updateplace}>
+                    <form id={place._id} onSubmit={this.state.updatePlace}>
+
                       <label htmlFor="name">Name</label><br/>
                       <input
                         type="text"
@@ -179,7 +190,9 @@ deletePlace = (event) => {
                       <input type="submit" id="Submit Edits" />
 
                     </form>
-                    <button value={place._id} onClick={this.deleteplace}>Delete</button>
+
+                    <button value={place._id} onClick={this.deletePlace}>Delete</button>
+
                   </details>
                 </div>
               </li>
@@ -188,6 +201,7 @@ deletePlace = (event) => {
         </ul>
       </section>
     </div>
+    )
   }
 }
 
