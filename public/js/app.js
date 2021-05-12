@@ -79,11 +79,13 @@ deletePlace = (event) => {
   render = () => {
     return (
 
+
     <div>
 
       <section className="add-place">
         <form onSubmit={this.handleSubmit} className="add-place">
           <label htmlFor="name">Name</label>
+
           <input
             className="form-control"
             type="text"
@@ -188,6 +190,7 @@ deletePlace = (event) => {
                       <input type="submit" id="Submit Edits" />
 
                     </form>
+
                     <button value={place._id} onClick={this.deletePlace}>Delete</button>
 
                   </details>
