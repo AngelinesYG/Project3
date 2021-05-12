@@ -131,14 +131,14 @@ deletePlaces = (event) => {
         <ul>
           {this.state.place.map(plant => {
             return (
-              <li key={places._id}>
-                <h2>{places.name}</h2>
-                <img src={places.image} alt={places.name} />
+              <li key={place._id}>
+                <h2>{place.name}</h2>
+                <img src={place.image} alt={place.name} />
                 <div className="dropdowns">
                   <details>
                     <summary>Description</summary>
-                      <p>City: {places.city}</p>
-                      <p>{places.description}</p>
+                      <p>City: {place.city}</p>
+                      <p>{place.description}</p>
                   </details>
                   <details>
                     <summary>Edit / Delete</summary>

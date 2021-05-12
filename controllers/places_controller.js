@@ -1,15 +1,15 @@
 const express = require('express')
-const places = express.Router()
+const place = express.Router()
 const Place = require('../models/place.js')
 const placeSeed = require('../models/place_seed.js')
 
-places.get('/', (req, res) => {
+place.get('/', (req, res) => {
   Place.find({}, (err, foundPlaces) => {
     res.json(foundPlaces)
   })
 })
 
-places.post('/', (req, res) => {
+place.post('/', (req, res) => {
   Place.create(req.body, (err, createPlace) => {
     Place.find({}, (err, foundPlace) => {
       res.json(foundPlace)
@@ -17,13 +17,13 @@ places.post('/', (req, res) => {
   })
 })
 
-// places.get('/seed', (req, res) => {
-//   Place.insertMany(placeSeed, (err, manyPlaces) => {
-//     res.redirect('/places')
-//   })
-// })
+place.get('/seed', (req, res) => {
+  Place.insertMany(placeSeed, (err, manyPlaces) => {
+    res.redirect('/places')
+  })
+})
 
-places.put('/:id', (req, res) => {
+place.put('/:id', (req, res) => {
   Place.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -40,7 +40,7 @@ places.put('/:id', (req, res) => {
   )
 })
 
-places.delete('/:id', (req, res) => {
+place.delete('/:id', (req, res) => {
   Place.findByIdAndRemove(req.params.id, (err, deletedPlace) => {
     Place.find({}, (err, foundPlaces) => {
       res.json(foundPlaces)
@@ -56,4 +56,4 @@ places.delete('/:id', (req, res) => {
 
 
 
-module.exports = places
+module.exports = place
