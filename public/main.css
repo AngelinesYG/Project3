@@ -1,0 +1,46 @@
+body{
+background-image:url('https://i.imgur.com/qZ8eZwa.jpg');
+background-size: cover;
+max-width: 100%;
+max-height: 100%;
+}
+
+img {
+  width: 200px;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+label {
+  display: block;
+  width: 200px;
+  float: left;
+  font-weight: bold;
+}
+li {
+  font-family: Helvetica;
+  color: lavender;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 28%;
+  margin: 2%;
+  background: black;
+  box-sizing: border-box;
+  border: 5px solid gray;
+  border-radius: 3em;
+  padding: 2%;
+  box-shadow: 2px 2px 4px royalblue;
+}
+
+button {
+  background: orange;
+  padding: 0.5em;
+  margin: 0.5em;
+}
