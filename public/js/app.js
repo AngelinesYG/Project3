@@ -81,9 +81,7 @@ deletePlace = (event) => {
 
 
     <div>
-
-      <section className="add-place">
-        <form onSubmit={this.handleSubmit} className="add-place">
+        <form className="form-group col-sm-6" onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name</label>
 
           <input
@@ -129,12 +127,10 @@ deletePlace = (event) => {
             value={this.state.place.description}
           />
 
-          <input type="submit" id="Add Place" />
+          <input className="btn btn-success mb-5" type="submit" id="Add Place" />
 
         </form>
-      </section>
 
-      <section className="place-list">
         <ul>
          {this.state.place.map(place => {
             return (
@@ -145,13 +141,13 @@ deletePlace = (event) => {
                   <details>
                     <summary>Description</summary>
                       <p>City: {place.city}</p>
-                      <p>{place.description}</p>
+                      <p>Country: {place.country}</p>
+                      <p>Description: {place.description}</p>
                   </details>
 
 
                   <details>
-                    <summary>Edit / Delete</summary>
-
+                    <summary>Edit</summary>
                     <form id={place._id} onSubmit={this.state.updatePlace}>
 
                       <label htmlFor="name">Name</label><br/>
@@ -188,19 +184,17 @@ deletePlace = (event) => {
                         onChange={this.handleChange}
                       /><br/>
 
-                      <input type="submit" id="Submit Edits" />
-
+                      <input className="btn btn-primary mb-1" type="submit" id="Submit Edits" />
                     </form>
 
-                    <button value={place._id} onClick={this.deletePlace}>Delete</button>
-
                   </details>
+                  <button value={place._id} onClick={this.deletePlace} className="btn btn-danger">Delete</button>
+
                 </div>
               </li>
             )
           })}
         </ul>
-      </section>
     </div>
     )
   }

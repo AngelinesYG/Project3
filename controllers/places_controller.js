@@ -19,7 +19,7 @@ place.post('/', (req, res) => {
 
 place.get('/seed', (req, res) => {
   Place.insertMany(placeSeed, (err, manyPlaces) => {
-    res.redirect('/places')
+    res.redirect('/place')
   })
 })
 
