@@ -148,7 +148,7 @@ deletePlace = (event) => {
 
                   <details>
                     <summary>Edit</summary>
-                    <form id={place._id} onSubmit={this.state.updatePlace}>
+                    <form id={place._id} onSubmit={this.updatePlace}>
 
                       <label htmlFor="name">Name</label><br/>
                       <input
