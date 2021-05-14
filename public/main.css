@@ -21,10 +21,13 @@ h1 {
   color: white;
   text-shadow: 5px 0 black, 0 5px black, 5px 0 black, 0 5px black;
    text-align: center;
-   font-size: 30rem;
+   font-size: 10vw;
+   font-stretch: expanded;
+   padding: 0px;
+   margin-bottom: 10px;
 }
 img {
-  width: 400px;
+  width: 600px;
   display: block;
 }
 
@@ -41,24 +44,39 @@ label {
   font-weight: bold;
 }
 li {
-  font-family: Helvetica;
-  color: lavender;
+  font-family: 'Sansita Swashed', Sansita;
+  color: white;
+  text-shadow: 1px 0 black, 0 1px black, 1px 0 black, 0 1px black;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-  flex-basis: 28%;
+  flex-basis: 70%;
   margin: 2%;
-  background: black;
+  background: #bfbfbf;
   box-sizing: border-box;
-  border: 5px solid gray;
-  border-radius: 3em;
+  border-radius: 2em;
   padding: 2%;
-  box-shadow: 2px 2px 4px royalblue;
+  box-shadow: 5px 5px 5px black;
 }
 
 button {
   background: orange;
   padding: 0.5em;
   margin: 0.5em;
+}
+
+.weather-check {
+   text-align: center;
+   font-family: 'Sansita Swashed', Sansita;
+   color: white;
+   text-shadow: 2px 0 black, 0 2px black, 2px 0 black, 0 2px black;
+   font-size: 22px;
+}
+.new-place {
+   text-align: center;
+   font-family: 'Sansita Swashed', Sansita;
+   color: white;
+   text-shadow: 2px 0 black, 0 2px black, 2px 0 black, 0 2px black;
+   font-size: 22px;
 }
