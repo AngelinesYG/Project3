@@ -6,7 +6,8 @@ class App extends React.Component {
     image: "",
     city: "",
     country: "",
-    description: ""
+    description: "",
+    rating: 0
   }
 
 
@@ -45,7 +46,8 @@ class App extends React.Component {
           image: "",
           city: "",
           country: "",
-          description: ""
+          description: "",
+          rating: 0
         })
       }
     )
@@ -65,7 +67,8 @@ updatePlace = (event) => {
         image: "",
         city: "",
         country: "",
-        description: ""
+        description: "",
+        rating: 0
       })
     }
   )
@@ -99,15 +102,26 @@ changeCityName = () => {
     }
   )
 }
+decreaseRating = () =>{
+   this.setState({
+      star: (this.state.star -= 1)
+   })
+}
+increaseRating = () =>{
+   this.setState({
+      star: (this.state.star += this.state.rating.value)
+   })
+}
 /*  ------ END COMPONENT DID MOUNT -----  */
 
 
 
   render = () => {
     return (
-
-
     <div>
+    <br />
+    <br />
+    <div className="weather-check">
     <details>
      <summary> Wheather Check </summary>
       <form onSubmit={this.findWeather}>
@@ -116,20 +130,22 @@ changeCityName = () => {
       </form>
 
     <dl>
-    <dt> City Name </dt>
+    <dt> City Name: </dt>
     <dd>{this.state.name}</dd>
-    <dt> Temperature </dt>
+    <dt> Temperature: </dt>
     <dd>{this.state.weatherLike}</dd>
-    <dt> Humidity </dt>
+    <dt> Humidity: </dt>
     <dd>{this.state.weather}</dd>
 
     </dl>
     </details>
-
-        <details >
+    
+    </div>
+      <div className="new-place">
+        <details>
         <summary> Add New Place </summary>
         <form className="form-group col-sm-6" onSubmit={this.handleSubmit}>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name:</label>
 
           <input
             className="form-control"
@@ -148,7 +164,7 @@ changeCityName = () => {
             value={this.state.place.image}
           />
 
-          <label htmlFor="city">City</label>
+          <label htmlFor="city">City:</label>
           <input
             className="form-control"
             type="text"
@@ -157,7 +173,7 @@ changeCityName = () => {
             value={this.state.place.city}
           />
 
-          <label htmlFor="country">Country</label>
+          <label htmlFor="country">Country:</label>
           <input
             className="form-control"
             type="text"
@@ -165,7 +181,7 @@ changeCityName = () => {
             onChange={this.handleChange}
             value={this.state.place.country}
           />
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">Description:</label>
           <input
             className="form-control"
             type="text"
@@ -173,12 +189,20 @@ changeCityName = () => {
             onChange={this.handleChange}
             value={this.state.place.description}
           />
+          <label htmlFor="rating">Rating:</label>
+          <input
+            className="form-control"
+            type="number"
+            id="rating"
+            onChange={this.handleChange}
+            value={this.state.place.rating}
+          />
 
           <input className="btn btn-success mb-5" type="submit" id="Add Place" />
 
         </form>
         </details>
-
+        </div>
         <ul>
          {this.state.place.map(place => {
             return (
@@ -192,13 +216,14 @@ changeCityName = () => {
                       <p>Country: {place.country}</p>
                       <p>Description: {place.description}</p>
                   </details>
+                      <p>Rating: {place.rating}⭐</p>
 
 
                   <details>
                     <summary>Edit</summary>
                     <form id={place._id} onSubmit={this.updatePlace}>
 
-                      <label htmlFor="name">Name</label><br/>
+                      <label htmlFor="name">Name:</label><br/>
                       <input
                         type="text"
                         id="name"
@@ -212,30 +237,35 @@ changeCityName = () => {
                         onChange={this.handleChange}
                       /><br/>
 
-                      <label htmlFor="city">City</label><br/>
+                      <label htmlFor="city">City:</label><br/>
                       <input
                         type="text"
                         id="city"
                         onChange={this.handleChange}
                       /><br/>
 
-                      <label htmlFor="country">Country</label><br/>
+                      <label htmlFor="country">Country:</label><br/>
                       <input
                         type="text"
                         id="country"
                         onChange={this.handleChange}
                       /><br/>
-                      <label htmlFor="description">Description</label><br/>
+                      <label htmlFor="description">Description:</label><br/>
                       <input
                         type="text"
                         id="description"
                         onChange={this.handleChange}
                       /><br/>
-
+                      <label htmlFor="rating">Rating: </label><br/>
+                      <input
+                        type="number"
+                        id="rating"
+                        onChange={this.handleChange}
+                      /><br/>
                       <input className="btn btn-primary mb-1" type="submit" id="Submit Edits" />
                     </form>
-
                   </details>
+
                   <button value={place._id} onClick={this.deletePlace} className="btn btn-danger">Delete</button>
 
                 </div>

@@ -6,6 +6,7 @@ const placeSchema = new mongoose.Schema({
    city: String,
    country: String,
    description: String,
+   rating: Number,
 })
 
 const Place = mongoose.model('Place', placeSchema)
