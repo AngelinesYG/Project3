@@ -13,7 +13,7 @@ class App extends React.Component {
   findWeather = (event) => {
     event.preventDefault();
     axios
-    .get("http://api.openweathermap.org/data/2.5/weather?q="+this.state.name+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
+    .get("https://api.openweathermap.org/data/2.5/weather?q="+this.state.name+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
     .then(
       (response) => {
           let temp = Math.ceil(Math.round(response.data.main.feels_like));
