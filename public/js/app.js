@@ -119,34 +119,36 @@ increaseRating = () =>{
   render = () => {
     return (
     <div>
+      <div class="Jalan">
+          <h1 class="Jalan">🌴 Jalan-Jalan 🌴</h1>
+       </div>
     <br />
     <br />
     <div className="weather-check">
-    <details>
-     <summary> Wheather Check </summary>
-      <form onSubmit={this.findWeather}>
-          <input type="text" onKeyUp={this.changeCityName}/>
-          <input type="submit" value = "Enter City Name" />
-      </form>
+          <details>
+           <summary> Wheather Check </summary>
+            <form onSubmit={this.findWeather}>
+                <input type="text" onKeyUp={this.changeCityName}/><br/>
+                <input className="btn btn-warning mb-5" type="submit" value = "City Destination" />
+            </form>
 
-    <dl>
-    <dt> City Name: </dt>
-    <dd>{this.state.name}</dd>
-    <dt> Temperature: </dt>
-    <dd>{this.state.weatherLike}</dd>
-    <dt> Humidity: </dt>
-    <dd>{this.state.weather}</dd>
+              <dl>
+              <dt> City Name: </dt>
+              <dd>{this.state.name}</dd>
+              <dt> Temperature: </dt>
+              <dd>{this.state.weatherLike}</dd>
+              <dt> Humidity: </dt>
+              <dd>{this.state.weather}</dd>
+              </dl>
+          </details>
 
-    </dl>
-    </details>
-    
     </div>
       <div className="new-place">
         <details>
         <summary> Add New Place </summary>
-        <form className="form-group col-sm-6" onSubmit={this.handleSubmit}>
+        <form className="form-group col-sm-5" onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name:</label>
-
+        <div className="class-for-form">
           <input
             className="form-control"
             type="text"
@@ -197,6 +199,7 @@ increaseRating = () =>{
             onChange={this.handleChange}
             value={this.state.place.rating}
           />
+        </div>
 
           <input className="btn btn-success mb-5" type="submit" id="Add Place" />
 
@@ -273,6 +276,21 @@ increaseRating = () =>{
             )
           })}
         </ul>
+        <footer class = "page-footer">
+          <div class = "container">
+              <div class="text-center">
+                <nav id="footerLink">
+                      <a href="http://linkedin.com/in/angelines-yaport-garcia-93aa074a/"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/OA6SsbIs.png" alt="Linkedin"/></a>
+                      <a href="https://github.com/AngelinesYG"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/LA1DKG4t.png" alt="GitHub"/></a>
+                      <a href="https://www.linkedin.com/in/christopher-nugroho-b2814050/"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/OA6SsbIs.png" alt="Linkedin"/></a>
+                      <a href="https://github.com/ChrisNulis"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/LA1DKG4t.png" alt="GitHub"/></a>
+                </nav>
+                  <p>Project 3 by Angelines Yaport-Garcia & Christopher Nugroho </p>
+                  <h6>Created using REACT, Bootstrap, Open Weather API</h6>
+              </div>
+          </div>
+      </footer>
+
     </div>
     )
   }
