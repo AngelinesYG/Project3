@@ -285,8 +285,8 @@ increaseRating = () =>{
                       <a href="https://www.linkedin.com/in/christopher-nugroho-b2814050/"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/OA6SsbIs.png" alt="Linkedin"/></a>
                       <a href="https://github.com/ChrisNulis"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/LA1DKG4t.png" alt="GitHub"/></a>
                 </nav>
-                  <p>Project 3 by Angelines Yaport-Garcia & Christopher Nugroho </p>
-                  <h6>Created using REACT, Bootstrap, Open Weather API</h6>
+                  <p>Project 3, "SalamViaje", by Angelines Yaport-Garcia & Christopher Nugroho </p>
+                  <h6>Created using Express, REACT, Bootstrap, and Open Weather API</h6>
               </div>
           </div>
       </footer>
