@@ -123,9 +123,11 @@ changeCityName = () => {
 
 
     <div>
+    <details>
+     <summary> Check Your Destination's Weather </summary>
       <form onSubmit={this.findWeather}>
           <input type="text" onKeyUp={this.changeCityName}/>
-          <input type="submit" value = "Weather" />
+          <input type="submit" value = "Enter City Name" />
       </form>
 
     <dl>
@@ -137,6 +139,7 @@ changeCityName = () => {
     <dd>{this.state.weather}</dd>
 
     </dl>
+    </details>
 
         <details >
         <summary> Add New Place </summary>

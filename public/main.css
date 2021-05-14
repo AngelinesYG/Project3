@@ -5,6 +5,19 @@ max-width: 100%;
 max-height: 100%;
 }
 
+h1 {
+  margin: 5rem 0 6rem 0;
+  flex-direction: row;
+  display: flex;
+  vertical-align: center;
+  text-align: center;
+  background-color: grey;
+  color: darkblue;
+  font-weight: bolder;
+  height: 80px;
+  justify-content: space-evenly;
+}
+
 .Jalan {
    text-align: center;
 }
