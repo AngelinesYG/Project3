@@ -119,8 +119,8 @@ increaseRating = () =>{
   render = () => {
     return (
     <div>
-      <div class="Jalan">
-          <h1 class="Jalan">🌴 Jalan-Jalan 🌴</h1>
+      <div className="Jalan">
+          <h1 className="Jalan">🌴 Jalan-Jalan 🌴</h1>
        </div>
     <br />
     <br />
@@ -276,9 +276,9 @@ increaseRating = () =>{
             )
           })}
         </ul>
-        <footer class = "page-footer">
-          <div class = "container">
-              <div class="text-center">
+        <footer className = "page-footer">
+          <div className = "container">
+              <div className ="text-center">
                 <nav id="footerLink">
                       <a href="http://linkedin.com/in/angelines-yaport-garcia-93aa074a/"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/OA6SsbIs.png" alt="Linkedin"/></a>
                       <a href="https://github.com/AngelinesYG"><img style={{width: '50px', height: '50px'}} src="https://i.imgur.com/LA1DKG4t.png" alt="GitHub"/></a>
