@@ -124,7 +124,7 @@ changeCityName = () => {
 
     <div>
     <details>
-     <summary> Check Your Destination's Weather </summary>
+     <summary> Wheather Check </summary>
       <form onSubmit={this.findWeather}>
           <input type="text" onKeyUp={this.changeCityName}/>
           <input type="submit" value = "Enter City Name" />
