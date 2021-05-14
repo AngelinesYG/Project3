@@ -1,16 +1,3 @@
-// class Weather extends React.Component {
-//   render = () => {
-//     return  <dl>
-//                 <dt>City</dt>
-//                 <dd>{this.props.weather}</dd>
-//             </dl>
-//
-//   }
-// }
-//
-
-
-
 
 class App extends React.Component {
   state = {
@@ -21,15 +8,12 @@ class App extends React.Component {
     country: "",
     description: ""
   }
- //  roundUP = () =>{
- //     let temp = Math.round(response.data.main.feels_like * 100)/100;
- // }
 
 
   findWeather = (event) => {
     event.preventDefault();
     axios
-    .get("http://api.openweathermap.org/data/2.5/weather?q="+this.state.name+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
+    .get("https://api.openweathermap.org/data/2.5/weather?q="+this.state.name+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
     .then(
       (response) => {
           let temp = Math.ceil(Math.round(response.data.main.feels_like));
@@ -40,9 +24,6 @@ class App extends React.Component {
       }
     )
   }
-// roundUp = () =>{
-//    let weatherLike = Math.round(response.data.main.feels_like *100)/100
-// }
 
 /* ----- HANDLE CHANGE: ------  */
 
