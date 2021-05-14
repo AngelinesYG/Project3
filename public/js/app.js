@@ -1,16 +1,3 @@
-// class Weather extends React.Component {
-//   render = () => {
-//     return  <dl>
-//                 <dt>City</dt>
-//                 <dd>{this.props.weather}</dd>
-//             </dl>
-//
-//   }
-// }
-//
-
-
-
 
 class App extends React.Component {
   state = {
@@ -21,9 +8,6 @@ class App extends React.Component {
     country: "",
     description: ""
   }
- //  roundUP = () =>{
- //     let temp = Math.round(response.data.main.feels_like * 100)/100;
- // }
 
 
   findWeather = (event) => {
@@ -40,9 +24,6 @@ class App extends React.Component {
       }
     )
   }
-// roundUp = () =>{
-//    let weatherLike = Math.round(response.data.main.feels_like *100)/100
-// }
 
 /* ----- HANDLE CHANGE: ------  */
 
