@@ -1,3 +1,17 @@
+// class Weather extends React.Component {
+//   render = () => {
+//     return  <dl>
+//                 <dt>City</dt>
+//                 <dd>{this.props.weather}</dd>
+//             </dl>
+//
+//   }
+// }
+//
+
+
+
+
 class App extends React.Component {
   state = {
     place: [],
@@ -7,6 +21,28 @@ class App extends React.Component {
     country: "",
     description: ""
   }
+ //  roundUP = () =>{
+ //     let temp = Math.round(response.data.main.feels_like * 100)/100;
+ // }
+
+
+  findWeather = (event) => {
+    event.preventDefault();
+    axios
+    .get("http://api.openweathermap.org/data/2.5/weather?q="+this.state.name+"&appid=cb62c3b0bbf4bc98a92507bb71fa55d5&units=imperial")
+    .then(
+      (response) => {
+          let temp = Math.ceil(Math.round(response.data.main.feels_like));
+        this.setState({
+        weatherLike: temp,
+        weather: response.data.main.humidity
+         })
+      }
+    )
+  }
+// roundUp = () =>{
+//    let weatherLike = Math.round(response.data.main.feels_like *100)/100
+// }
 
 /* ----- HANDLE CHANGE: ------  */
 
@@ -74,13 +110,43 @@ deletePlace = (event) => {
       })
     })
   }
+
+changeCityName = () => {
+  this.setState(
+    {
+      name: event.target.value
+    }
+  )
+}
 /*  ------ END COMPONENT DID MOUNT -----  */
+
+
 
   render = () => {
     return (
 
 
     <div>
+    <details>
+     <summary> Wheather Check </summary>
+      <form onSubmit={this.findWeather}>
+          <input type="text" onKeyUp={this.changeCityName}/>
+          <input type="submit" value = "Enter City Name" />
+      </form>
+
+    <dl>
+    <dt> City Name </dt>
+    <dd>{this.state.name}</dd>
+    <dt> Temperature </dt>
+    <dd>{this.state.weatherLike}</dd>
+    <dt> Humidity </dt>
+    <dd>{this.state.weather}</dd>
+
+    </dl>
+    </details>
+
+        <details >
+        <summary> Add New Place </summary>
         <form className="form-group col-sm-6" onSubmit={this.handleSubmit}>
           <label htmlFor="name">Name</label>
 
@@ -130,6 +196,7 @@ deletePlace = (event) => {
           <input className="btn btn-success mb-5" type="submit" id="Add Place" />
 
         </form>
+        </details>
 
         <ul>
          {this.state.place.map(place => {
