@@ -73,14 +73,14 @@ button {
 
 .weather-check {
    text-align: center;
-   font-family: 'Sansita Swashed', Sansita;
+   font-family: 'Sansita Swashed', cursive;
    color: white;
    text-shadow: 2px 0 black, 0 2px black, 2px 0 black, 0 2px black;
    font-size: 22px;
 }
 .new-place {
    text-align: center;
-   font-family: 'Sansita Swashed', Sansita;
+   font-family: 'Sansita Swashed', cursive;
    color: white;
    text-shadow: 2px 0 black, 0 2px black, 2px 0 black, 0 2px black;
    font-size: 22px;
@@ -93,7 +93,7 @@ button {
 
 
 footer {
-  font-family: 'Arial', Sansita;
+  font-family: 'Kanit', Arial;
   color: whitesmoke;
   text-shadow: 2px 0 black, 0 2px black, 2px 0 black, 0 2px black;
   width: 100%;
